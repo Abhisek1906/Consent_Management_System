@@ -9,8 +9,8 @@ import java.util.List;
 @Table(name = "Hospital_patient")
 public class Hospital_patient {
 
-    @Column(name="hospitalId")
-    private Integer hospitalId;
+    @Column(name="hospitalId",nullable = false)
+    private int hospitalId;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

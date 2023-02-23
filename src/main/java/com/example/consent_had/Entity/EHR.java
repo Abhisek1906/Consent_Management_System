@@ -13,7 +13,8 @@ public class EHR {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ehr_id;
 
-
+    @Column(name="hospitalId",nullable = false)
+    private int hospitalId;
 
     @Column(name="doctorId",nullable = false)
     private int doctorId;
@@ -21,7 +22,7 @@ public class EHR {
     @Column(name="timestamp", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP",nullable = false)
     private Date timeStamp;
 
-    @Column(name="diagnosis",nullable = false)
+    @Column(name="diagnosis")
     private String Diagnosis;
 
     @Column(name="medicine",nullable = false)

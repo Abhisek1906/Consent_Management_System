@@ -10,7 +10,7 @@ public class Mapping {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer mapping_id;
+    private int mapping_id;
 
     @Column(name="abha_Id",nullable = false)
     private int abhaId;
