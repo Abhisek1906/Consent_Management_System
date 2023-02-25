@@ -19,6 +19,7 @@ public class Hospital_PatientController {
 
     @PostMapping("/addPatientInHospital")
     public ResponseEntity<?> addPatientInHospital(@RequestBody Hospital_patient hospitalPatient){
+        System.out.print(hospitalPatient.getHid());
         if(hospitalPatientService.addPatient(hospitalPatient))
         {
             return ResponseEntity.ok("Success");
@@ -28,6 +29,7 @@ public class Hospital_PatientController {
 
     @PostMapping("/addEhrForPatient")
     public ResponseEntity<?> addEhrForPatient(@RequestBody EHR ehr){
+        System.out.println(ehr.getEhr_id()+" "+ehr.getDoctorId());
         if(hospitalPatientService.addEhrForPatient(ehr)){
             return ResponseEntity.ok("success");
         }

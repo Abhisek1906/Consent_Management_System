@@ -1,23 +1,28 @@
 package com.example.consent_had.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 
 @Entity
 @Table(name = "Hospital_patient")
+@Data
 public class Hospital_patient {
-
-    @Column(name="hospitalId",nullable = false)
-    private int hospitalId;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "patientId",nullable = false)
+    @Column(name = "patient_id")
     private int patientId;
 
+    @Column(name="hospital_id",nullable = false)
+    private int hospitalId;
+
+
+
     @OneToMany(mappedBy = "patient")
+    @JsonManagedReference
     private List<EHR> ehrList;
 
     public int getHid() {
@@ -36,13 +41,7 @@ public class Hospital_patient {
         this.patientId = pid;
     }
 
-    public List<EHR> getEhrList() {
-        return ehrList;
-    }
 
-    public void setEhrList(List<EHR> ehrList) {
-        this.ehrList = ehrList;
-    }
 
     public Hospital_patient() {
     }
