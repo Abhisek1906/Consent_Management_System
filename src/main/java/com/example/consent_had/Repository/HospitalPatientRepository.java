@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface HospitalPatientRepository extends JpaRepository<Hospital_patient,Integer> {
-    @Query(nativeQuery = true,value = "select * from Hospital_patient h WHERE h.hospitalId=:hospitalId and h.patientId=:patientId")
+    @Query(nativeQuery = true,value = "select * from hospital_patient h WHERE h.hospital_id=:hospitalId and h.patient_id=:patientId")
     Hospital_patient getPatient(int hospitalId, int patientId);
 
 }

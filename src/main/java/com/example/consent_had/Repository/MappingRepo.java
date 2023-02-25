@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface MappingRepo extends JpaRepository<Mapping,Integer> {
 
-    @Query(value = "SELECT m.hospitalId,m.patientId from Mapping m WHERE m.abhaId=:abhaId",nativeQuery = true)
+    @Query(value = "SELECT m.hospital_id,m.patient_id from mapping m WHERE m.abha_id=:abhaId",nativeQuery = true)
     List<List<Integer>> getPatientHospitalPair(int abhaId);
 }
