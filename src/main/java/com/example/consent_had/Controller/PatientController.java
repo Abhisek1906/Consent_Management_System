@@ -22,7 +22,11 @@ public class PatientController {
         List<EHR> getEhrResponse=patientService.fetchEhrOfPatient(id);
         return ResponseEntity.ok(getEhrResponse);
     }
+    @GetMapping("/getPatientInfo/{patientId}")
+    public ResponseEntity<Patient> getPatientInformation(@PathVariable("patientId") int id){
+            return ResponseEntity.ok(patientService.getPatientInfo(id));
 
+    }
     @PostMapping("/addPatient")
     public ResponseEntity<?> addPatient(@RequestBody Patient patient){
         if(patientService.addPatient(patient))

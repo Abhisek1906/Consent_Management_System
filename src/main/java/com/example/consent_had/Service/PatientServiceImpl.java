@@ -73,4 +73,12 @@ public class PatientServiceImpl implements PatientService{
         List<List<Integer>> getHospitalAndPatientIds=mappingRepo.getPatientHospitalPair(id);
         return getHospitalAndPatientIds;
     }
+
+
+
+    @Override
+    public Patient getPatientInfo(int id) {
+        return patientRepository.findById(id).get();
+    }
+
 }
