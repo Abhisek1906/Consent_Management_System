@@ -18,8 +18,8 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("/getEhr/{patientId}")
-    public ResponseEntity<List<EhrResponse>> getEhrByPatientId(@PathVariable("patientId") int id){
-        List<EhrResponse> getEhrResponse=patientService.fetchEhrOfPatient(id);
+    public ResponseEntity<List<EHR>> getEhrByPatientId(@PathVariable("patientId") int id){
+        List<EHR> getEhrResponse=patientService.fetchEhrOfPatient(id);
         return ResponseEntity.ok(getEhrResponse);
     }
 

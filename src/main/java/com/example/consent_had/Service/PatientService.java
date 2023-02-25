@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PatientService {
 
-    List<EhrResponse> fetchEhrOfPatient(int id);
+    List<EHR> fetchEhrOfPatient(int id);
 
     boolean addPatient(Patient patient);
 }
