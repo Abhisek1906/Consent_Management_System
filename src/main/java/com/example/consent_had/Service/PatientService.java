@@ -11,4 +11,5 @@ public interface PatientService {
     List<EHR> fetchEhrOfPatient(int id);
 
     boolean addPatient(Patient patient);
+    Patient getPatientInfo(int id);
 }
