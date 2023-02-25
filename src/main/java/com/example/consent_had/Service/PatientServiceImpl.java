@@ -41,6 +41,7 @@ public class PatientServiceImpl implements PatientService{
 
             for(int j=0;j<getPatientsSpecificToEHR.size();j++){
                 EHR e1=getPatientsSpecificToEHR.get(j);
+                System.out.println(e1.toString());
                 EhrResponse ehrResponse=modelMapper.map(e1,EhrResponse.class);
                 result.add(ehrResponse);
             }
