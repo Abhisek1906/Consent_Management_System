@@ -14,6 +14,16 @@ public class EhrResponse {
     private String medicine;
     private Date timeStamp;
 
+    private String doctorName;
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
     public int getEhrId() {
         return ehrId;
     }
