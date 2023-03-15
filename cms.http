@@ -1,0 +1,25 @@
+###
+POST http://localhost:8081/cms/addMapping
+Content-Type: application/json
+
+{
+  "abhaId": 1,
+  "hospitalId": 3,
+  "patientId": 1
+}
+
+###
+POST http://localhost:8081/cms/addMapping
+Content-Type: application/json
+
+{
+  "abhaId": 2,
+  "hospitalId": 3,
+  "patientId": 2
+}
+
+
+
+###
+
+GET http://localhost:8081/cms/getEHR/1

@@ -1,0 +1,37 @@
+###
+POST http://localhost:7070/v1/patient/addPatient
+Content-Type: application/json
+
+{
+  "name": "durgaPrasad",
+  "email": "123@123.com",
+  "contact_no" : 978218321,
+  "gender": "male",
+  "password" : "1234",
+  "age" : 21
+
+}
+
+###
+POST http://localhost:7070/v1/patient/addPatient
+Content-Type: application/json
+
+{
+  "name": "faraz",
+  "email": "farzu@123.com",
+  "contact_no" : 9782183,
+  "gender": "male",
+  "password" : "faraz",
+  "age" : 21
+
+}
+
+
+###
+
+GET http://localhost:7070/v1/patient/getPatientInfo/1
+
+
+###
+
+GET http://localhost:7070/v1/patient/getEhr/2
