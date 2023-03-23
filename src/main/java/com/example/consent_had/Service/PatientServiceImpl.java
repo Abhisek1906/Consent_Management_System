@@ -30,24 +30,28 @@ public class PatientServiceImpl implements PatientService{
    
 
     @Override
-    public List<EhrResponse> fetchEhrOfPatient(int id) {
-        List<EhrResponse> result=new ArrayList<>();
+    public List<EHR> fetchEhrOfPatient(int id) {
+//        List<EhrResponse> result=new ArrayList<>();
+        List<EHR> result=new ArrayList<>();
+        System.out.println(id);
         List<List<Integer>> hospitalAndPatientIds=fetchHospitalAndPatientIds(id);
         for(int i=0;i<hospitalAndPatientIds.size();i++){
             List<Integer> sub=hospitalAndPatientIds.get(i);
             int hospitalId=sub.get(0);
             int patientId=sub.get(1);
+//            System.out.println(hospitalId+"#########"+patientId);
             List<EHR> getPatientsSpecificToEHR=fetchPatientsSpecificToEhr(hospitalId,patientId);
-
-            for(int j=0;j<getPatientsSpecificToEHR.size();j++){
+//            System.out.println(getPatientsSpecificToEHR);
+           for(int j=0;j<getPatientsSpecificToEHR.size();j++){
                 EHR e1=getPatientsSpecificToEHR.get(j);
-                System.out.println(e1.toString());
-                EhrResponse ehrResponse=modelMapper.map(e1,EhrResponse.class);
-                result.add(ehrResponse);
+                //System.out.println(e1.toString());
+//                //EhrResponse ehrResponse=modelMapper.map(e1,EhrResponse.class);
+//                //result.add(ehrResponse);
+                result.add(e1);
             }
 
         }
-        
+
         return result;
     }
 
@@ -69,4 +73,12 @@ public class PatientServiceImpl implements PatientService{
         List<List<Integer>> getHospitalAndPatientIds=mappingRepo.getPatientHospitalPair(id);
         return getHospitalAndPatientIds;
     }
+
+
+
+    @Override
+    public Patient getPatientInfo(int id) {
+        return patientRepository.findById(id).get();
+    }
+
 }

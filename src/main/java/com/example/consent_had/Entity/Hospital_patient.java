@@ -25,29 +25,4 @@ public class Hospital_patient {
     @JsonManagedReference
     private List<EHR> ehrList;
 
-    public int getHid() {
-        return hospitalId;
-    }
-
-    public void setHid(int hid) {
-        this.hospitalId = hid;
-    }
-
-    public int getPid() {
-        return patientId;
-    }
-
-    public void setPid(int pid) {
-        this.patientId = pid;
-    }
-
-
-
-    public Hospital_patient() {
-    }
-
-    public Hospital_patient(int hid, int pid) {
-        this.hospitalId = hid;
-        this.patientId = pid;
-    }
 }

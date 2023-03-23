@@ -1,0 +1,24 @@
+###
+POST http://localhost:9090/kims/addPatientInHospital
+Content-Type: application/json
+
+{
+  "hospitalId" : 3
+}
+
+###
+POST http://localhost:9090/kims/addEhrForPatient
+Content-Type: application/json
+
+
+{
+  "hospitalId":3,
+  "hospitalName":"kims",
+  "doctorId":4,
+  "doctorName":"dp",
+  "diagnosis": "dengue",
+  "medicine": "nonmetro",
+  "patient": {"patientId": 1 }
+
+
+}

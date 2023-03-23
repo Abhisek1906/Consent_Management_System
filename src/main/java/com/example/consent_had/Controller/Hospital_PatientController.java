@@ -19,7 +19,7 @@ public class Hospital_PatientController {
 
     @PostMapping("/addPatientInHospital")
     public ResponseEntity<?> addPatientInHospital(@RequestBody Hospital_patient hospitalPatient){
-        System.out.print(hospitalPatient.getHid());
+       // System.out.print(hospitalPatient.getHid());
         if(hospitalPatientService.addPatient(hospitalPatient))
         {
             return ResponseEntity.ok("Success");

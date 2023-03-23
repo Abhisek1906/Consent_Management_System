@@ -1,0 +1,62 @@
+###
+POST http://localhost:8081/v1/patient/addPatient
+Content-Type: application/json
+
+{
+  "name": "accounts",
+  "email": "123@123.com",
+  "contact_no" : 978218321,
+  "gender": "male",
+  "age" : 21
+
+}
+###
+POST http://localhost:8081/hospital_patient/addPatientInHospital
+Content-Type: application/json
+
+{
+  "hospitalId":3,
+  "doctorId":2,
+  "diagnosis": "malaria",
+  "medicine": "dolo",
+  "patient": {"patientId": 1 }
+
+
+}
+
+
+###
+POST http://localhost:8081/mapping/addMapping
+Content-Type: application/json
+
+{
+  "abhaId": 1,
+  "hospitalId": 3,
+  "patientId": 1
+}
+
+
+###
+POST http://localhost:8081/hospital_patient/addEhrForPatient
+Content-Type: application/json
+
+{
+  "hospitalId":3,
+  "hospitalName": "kims",
+  "doctorId": 2,
+  "doctorName": "durgaPrasad",
+  "diagnosis": "malaria",
+  "medicine": "dolo",
+  "patient": {"patientId": 1 }
+
+
+}
+
+
+###
+
+GET http://localhost:8081/v1/patient/getEhr/1
+
+###
+
+GET http://localhost:8081/v1/patient/getPatientInfo/1

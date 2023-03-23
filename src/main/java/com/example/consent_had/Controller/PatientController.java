@@ -18,11 +18,15 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("/getEhr/{patientId}")
-    public ResponseEntity<List<EhrResponse>> getEhrByPatientId(@PathVariable("patientId") int id){
-        List<EhrResponse> getEhrResponse=patientService.fetchEhrOfPatient(id);
+    public ResponseEntity<List<EHR>> getEhrByPatientId(@PathVariable("patientId") int id){
+        List<EHR> getEhrResponse=patientService.fetchEhrOfPatient(id);
         return ResponseEntity.ok(getEhrResponse);
     }
+    @GetMapping("/getPatientInfo/{patientId}")
+    public ResponseEntity<Patient> getPatientInformation(@PathVariable("patientId") int id){
+            return ResponseEntity.ok(patientService.getPatientInfo(id));
 
+    }
     @PostMapping("/addPatient")
     public ResponseEntity<?> addPatient(@RequestBody Patient patient){
         if(patientService.addPatient(patient))
