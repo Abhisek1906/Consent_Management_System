@@ -18,6 +18,8 @@ public class PatientAppConfig {
 
         modelMapper.createTypeMap(EHR.class, EhrResponse.class)
                 .addMapping(EHR::getEhr_id, EhrResponse::setEhrId);
+
+
         return modelMapper;
     }
 }

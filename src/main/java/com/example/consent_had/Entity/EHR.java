@@ -24,6 +24,9 @@ public class EHR {
     @CreationTimestamp
     private Date timeStamp;
 
+    @Column(name = "doctorName")
+    private String doctorName;
+
     @Column(name="diagnosis")
     private String Diagnosis;
 
@@ -47,6 +50,15 @@ public class EHR {
         Diagnosis = diagnosis;
         this.medicine = medicine;
         this.patient = patient;
+    }
+
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
     }
 
     public int getEhr_id() {
